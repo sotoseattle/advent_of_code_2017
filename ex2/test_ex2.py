@@ -8,7 +8,7 @@ def test_even_div_1():
     assert even_div('9\t4\t7\t3') == 3
     assert even_div('3\t8\t6\t5') == 2
 
-def test_checksumo():
+def test_checksumo_1():
     incoming = '5\t1\t9\t5\n7\t5\t3\n2\t4\t6\t8'
     assert checksumo_1(incoming) == 18
 
