@@ -2,7 +2,7 @@ def has_duplo(passphrase):
     words = passphrase.split(' ')
     return len(set(words)) != len(words)
 
-def is_anagram(passphrase):
+def has_anagram(passphrase):
     words = passphrase.split(' ')
     zen = len(words)
 

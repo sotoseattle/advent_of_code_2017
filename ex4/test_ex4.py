@@ -6,11 +6,11 @@ def test_no_duplos():
     assert has_duplo('aa bb cc dd aaa') == False
 
 def test_is_anagram():
-    assert is_anagram('abcde fghij') == False
-    assert is_anagram('abcde xyz ecdab') == True
-    assert is_anagram('a ab abc abd abf abj') == False
-    assert is_anagram('iiii oiii ooii oooi oooo') == False
-    assert is_anagram('oiii ioii iioi iiio') == True
+    assert has_anagram('abcde fghij') == False
+    assert has_anagram('abcde xyz ecdab') == True
+    assert has_anagram('a ab abc abd abf abj') == False
+    assert has_anagram('iiii oiii ooii oooi oooo') == False
+    assert has_anagram('oiii ioii iioi iiio') == True
 
 
 inputo = """bdwdjjo avricm cjbmj ran lmfsom ivsof
@@ -530,5 +530,5 @@ def test_number_valid_1():
     assert valid_passphrases(inputo, has_duplo) == 455
 
 def test_number_valid_2():
-    assert valid_passphrases(inputo, is_anagram) == 186
+    assert valid_passphrases(inputo, has_anagram) == 186
 
