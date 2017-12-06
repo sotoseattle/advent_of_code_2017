@@ -4,7 +4,7 @@ from itertools import count
 def nexto(i, zen):
     return 0 if i == zen-1 else i+1
 
-def part_1(inputo_str):
+def part_1_and_2(inputo_str):
     '''return tuple (sol to part 2, sol to part 1)'''
     listo = [int(x) for x in inputo_str.split(r' ')]
     zen = len(listo)
