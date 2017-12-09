@@ -20,7 +20,6 @@ def run_it(inputo):
         if eval('{} {}'.format(vars[o['cond_v']], o['cond_op'])):
             vars[o['v']] += o['q']
             maximos.append(max(vars.values()))
-
     return {'final_max_val': maximos[-1], 'interim_max_val': max(maximos)}
 
 def part_1(inputo):
