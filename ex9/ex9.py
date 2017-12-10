@@ -1,28 +1,22 @@
 import re
 import sys
-sys.setrecursionlimit(10_000)
+sys.setrecursionlimit(5_000)
 
-def score(inputo, abierto=False, level=0, tot=0):
-    if len(inputo) == 0:
-        return tot
+def score(inputo, level=0, tot=0):
+    if len(inputo) == 0: return tot
 
-    char = inputo[0]
-    inputo = inputo[1:]
-    if char == '}':
-        abierto = False
+    if inputo[0] == '}':
         tot += level
         level -= 1
-    elif char == '{':
+    elif inputo[0] == '{':
         level += 1
-        abierto = True
 
-    return score(inputo, abierto, level, tot)
+    return score(inputo[1:], level, tot)
 
 def cleanup(inputo):
     inputo = re.sub(r'\!.', '', inputo)
     garbage = sum([len(e) for listo in re.findall(r'<([^>]*)>', inputo) for e in listo])
-    inputo = re.sub(r'(<[^>]*>)', '', inputo)
-    inputo = re.sub(r'[^{}]', '', inputo)
+    inputo = re.sub(r'(<[^>]*>|[^{}])', '', inputo)
     return (inputo, garbage)
 
 def part_1(inputo):
